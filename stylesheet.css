@@ -1,0 +1,156 @@
+    body{
+
+        margin: 15px;
+        background-image: linear-gradient(180deg, #d4b36bd0, #ffeba8b7);
+    }    
+    .gridcontainer {             
+        /*align-items: flex-start;*/
+        padding:  10px ;
+        width: 90vw;
+        height:80vh ;
+        /*background-color: #00ba44;*/
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+        /*grid-template-areas:
+        "header , header"
+        "kalender , info "
+        "kalender , info "
+        " footer , footer";
+        grid-template-rows: 15% ,20% , 45%, 10%;
+        */
+        
+         /* grid-template-areas:
+
+       "header , header,header , header"
+        "kalender, kalender , info, info "
+        "kalender, kalender , info, info "
+        " footer , footer, footer , footer"; */
+    }
+    .header  {
+        border-radius: 8%;
+        background-image: linear-gradient(180deg, #8fd81b, #6ec23eb9);
+        text-align: center;
+        grid-column-start:1 ;
+        grid-column-end:4 ;
+        grid-row-start:1 ;
+        grid-row-end:1 ;
+    }
+    .kalender {
+        display: flex;
+        justify-content: center;
+        border:  3px ridge gray; 
+        border-radius: 5%;
+        padding: 10px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start:2 ;
+        grid-row-end:3 ;
+        background-color:#b28c59;
+    }
+    .info{
+        background-color:#cca066;
+        text-align: center;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start:2 ;
+        grid-row-end:2 ;
+    }
+    .history{
+        /*width: 200px;
+        height: 200px;
+        padding:10px ;
+        border: 1px solid;*/
+        background-color: #ffc880;
+        display: flex;
+        flex-flow:row wrap ;
+        justify-content: space-around;
+        text-align: center;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start:3 ;
+        grid-row-end:3 ;
+    }
+    .footer{
+            background-color: #ffd399;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start:4 ;
+            grid-row-end:4 ;
+            text-align: center;
+    }
+    thead{
+            display: block;
+            width: 50px;
+    }
+    #H1{
+    text-align: center;
+    }
+    #Monat {
+    color:maroon;
+    text-align: left;
+    border: none;
+    
+    }
+    #Jahr{
+    color: maroon;
+    border: none;
+    align-items: stretch; 
+    width: 50px;
+    }
+    .Samstag{
+        background-color:#d8a766;
+        padding: 0 5px 0 5px;    
+        width: 50px;
+    }
+    td~.Samstag:hover{
+        background-color:#eb433794;
+    }  
+    .Sonntag{
+        background-color:#cf3d33;
+        color: #ffc880;
+        padding: 0 5px 0 5px;
+        width: 50px;
+    }  
+    td~.Sonntag:hover{
+        background-color: #9f60bf;
+    }
+    .kopfzeile{
+        background-color: black;
+        color: aliceblue;
+        padding: 5px;    
+    }
+    td{
+        border:2px inset olivedrab;
+        text-align: center;
+    }
+    td:hover{
+        background-color: #6b7e99;
+    }
+    button{display: inline;
+    border-radius: 10px;
+    background-color: #6ec23eb9;
+    width: 50px;
+    
+    }
+    #none{
+    display: inline-block;
+    width: 50px;
+    visibility: hidden;
+    }
+    #back_m{
+        display: block;
+        width: 50px;
+    }
+    #forwad_m{
+        display: block;
+        width: 50px;
+    }
+    #forwad_y{
+        display: block;
+        width: 50px;
+    }
+    #back_y{
+        display: block;
+        width: 50px;
+    }
