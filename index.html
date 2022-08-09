@@ -9,26 +9,26 @@
             </Title>      
     </head>
     <Body>
-        <H1 id="H1">
-            Mein Kalender 25.07.2022
-        </H1>
-            <div class="gridcontainer"> <!--grid.container-->  
-                <div class="header"> <!--Header-->
+        <h1 id="H1">
+            Mein Kalender  <span id="datum01">25.07.2022</span> 
+        </h1>
+            <div id="gridcontainer"> <!--grid.container-->  
+                <div id="header"> <!--Header-->
                         
-                        <h2> Kalenderblatt 25.07.2022</h2>
+                        <h2> Kalenderblatt <span id="datum02">25.7.2022</span></h2>
                 </div>                                
-                    <div class="kalender"><!--Kalenderblatt-->
+                    <div id="kalender"> <!--Kalenderblatt-->
                         <table >
                             <thead>
-                                    <tr>
-                                        <th><button id="back_m"> - </button></th>
-                                        <th id="Monat">Juli</th>
-                                        <th><button id="forward_m"> + </button></th>
-                                        <th id="none"></th>
-                                        <th><button id="back_y"> - </button></th>
-                                        <th id="Jahr">2022</th>
-                                        <th><button id="forward_y"> + </button></th>
-                                    </tr>
+                                <tr>
+                                    <th><button id="back_m"> - </button></th>
+                                    <th id="Monat">Juli</th>
+                                    <th><button id="forward_m"> + </button></th>
+                                    <th id="none"></th>
+                                    <th><button id="back_y"> - </button></th>
+                                    <th id="Jahr">2022</th>
+                                    <th><button id="forward_y"> + </button></th>
+                                </tr>
                             </thead>
                                 <tbody>
                                     <tr>
@@ -94,19 +94,22 @@
                                 </tbody>
                         </table>
                     </div>
-                        <div class="info"> <!--Infotext-->
+                   <div id="links"><!--Foto link-->
+                        <img src="tour-de-france.jpg" alt="Bild der tour de france">
+                    </div>
+                        <div id="info"> <!--Infotext-->
                                 <h3>
                                 Info zu Heute
                                 </h3> 
-                                <p>Der 25.7.2022 ist ein Montag und zwar der letzte Montag des Monats Juli
-                                im jahr 2022.<br>
+                                <p>Der <span class="datumLang">25.7.2022</span>  ist ein <span id="Wochentag">Maustag</span> und zwar der <span id="xteWoche">4.</span>  <span id="Wochentag">Montag</span> des Monats <span id="Monatsname">Julei</span>
+                                im jahr <span id="JahrInfo">2020</span> .<br>
                                 Es handelt sich nicht um einen gesetzlichen Feiertag.<br> Der Letze Feiertag 
-                                vor dem 25.7.2022 war der 16.6.2022(Fronleichnam)<br> und der nächste Feiertag 
+                                vor dem <span class="datumLang">25.7.2022</span>  war der 16.6.2022(Fronleichnam)<br> und der nächste Feiertag 
                                 ist der 03.10.22(Tag der Deutschen Einheit)
                                 </p>
                         </div>
-                            <div class="history"> <!--Historische Fakten-->
-                                <h4><ins>Historische Ereignisse am 25.07</ins>.</h4>
+                            <div id="history"> <!--Historische Fakten-->
+                                <h4><ins>Historische Ereignisse am <span id="datumKurz">25.07</span></ins>.</h4>
                             
                                 <ul>
                                     <li>Der 25. Juli ist der 206. Tag des gregorianischen Kalenders (der 207. in Schaltjahren), somit bleiben 159 Tage bis zum Jahresende.
@@ -125,10 +128,11 @@
                                     </li>
                                 </ul>
                             </div>
-                                <div class="footer"> <!--Footer-->
+                                <div id="footer"> <!--Footer-->
                                     <a href="https://www.google.de/">google</a>
                                 </div>
-            </div>     
+            </div>    
+            <p id="test"></p> 
     </Body>
     <script type="text/javascript" src="script.js"></script>
 </HTML>  

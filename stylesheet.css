@@ -1,83 +1,100 @@
     body{
 
         margin: 15px;
-        background-image: linear-gradient(180deg, #d4b36bd0, #ffeba8b7);
+        background-image: linear-gradient(90deg, #d4b36bd0, #ffeba8b7);
     }    
-    .gridcontainer {             
-        /*align-items: flex-start;*/
-        padding:  10px ;
+    #gridcontainer {             
+       
+        padding:10px ;
         width: 90vw;
-        height:80vh ;
-        /*background-color: #00ba44;*/
-        display: grid;
-        grid-template-columns: 1fr 2fr;
+        height:90vh ;
+        background-color: #00ba44;
+        display: grid;   
+        grid-template-columns: 1fr 2fr;     
+        grid-template-areas:
+        "Header Header"
+        "Kalender Info"
+        "Links History"
+        "Footer Footer";
         gap: 10px;
-        /*grid-template-areas:
-        "header , header"
-        "kalender , info "
-        "kalender , info "
-        " footer , footer";
-        grid-template-rows: 15% ,20% , 45%, 10%;
+        /*grid-template-rows: 15% ,20% , 45%, 10%;
         */
-        
+         /*align-items: flex-start;*/
          /* grid-template-areas:
 
+           grid-template-columns:50%,50% ;
+        grid-template-rows: 15%,35%,35%,15%;
        "header , header,header , header"
         "kalender, kalender , info, info "
         "kalender, kalender , info, info "
         " footer , footer, footer , footer"; */
     }
-    .header  {
-        border-radius: 8%;
+    #header  {
+        grid-area:Header;
+        border-radius: 10%;
         background-image: linear-gradient(180deg, #8fd81b, #6ec23eb9);
         text-align: center;
-        grid-column-start:1 ;
+        /*grid-column-start:1 ;
         grid-column-end:4 ;
         grid-row-start:1 ;
-        grid-row-end:1 ;
+        grid-row-end:1 ;*/
     }
-    .kalender {
+    #kalender {
+        grid-area:Kalender;
         display: flex;
         justify-content: center;
         border:  3px ridge gray; 
         border-radius: 5%;
         padding: 10px;
-        grid-column-start: 2;
+        /*grid-column-start: 2;
         grid-column-end: 3;
         grid-row-start:2 ;
-        grid-row-end:3 ;
+        grid-row-end:3 ;*/
         background-color:#b28c59;
     }
-    .info{
+    #links{
+        grid-area:Links;
+        
+    }
+
+    #info{
+        grid-area: Info;
         background-color:#cca066;
         text-align: center;
-        grid-column-start: 3;
+        /*grid-column-start: 3;
         grid-column-end: 4;
         grid-row-start:2 ;
-        grid-row-end:2 ;
+        grid-row-end:2 ;*/
     }
-    .history{
+    #history{
         /*width: 200px;
         height: 200px;
         padding:10px ;
-        border: 1px solid;*/
+        border: 1px solid;
+         grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start:3 ;
+        grid-row-end:3 ;*/
+        grid-area:History;
         background-color: #ffc880;
         display: flex;
         flex-flow:row wrap ;
         justify-content: space-around;
         text-align: center;
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row-start:3 ;
-        grid-row-end:3 ;
+       
     }
-    .footer{
+    #footer{
             background-color: #ffd399;
-            grid-column-start: 1;
+           grid-area:Footer;
+            /*text-align: center;
+             grid-column-start: 1;
             grid-column-end: 4;
             grid-row-start:4 ;
-            grid-row-end:4 ;
-            text-align: center;
+            grid-row-end:4 ;*/
+    }
+    img{
+       height: 100%;
+       width: 100%;
     }
     thead{
             display: block;
