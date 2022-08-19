@@ -17,13 +17,13 @@
                         <table >
                             <thead>
                                 <tr>
-                                    <th><button id="back_m"> - </button></th>
+                                    <th><button type="button" id="back_m" onclick=""> - </button></th>
                                     <th id="Monat">Juli</th>
-                                    <th><button id="forward_m"> + </button></th>
+                                    <th><button type="button" id="forward_m" onclick=""> + </button></th>
                                     <th id="none"></th>
-                                    <th><button id="back_y"> - </button></th>
+                                    <th><button type="button" id="back_y" onclick=""> - </button></th>
                                     <th id="Jahr">2022</th>
-                                    <th><button id="forward_y"> + </button></th>
+                                    <th><button type="button" id="forward_y" onclick=""> + </button></th>
                                 </tr>
                             </thead>
                                 <tbody id = "kalenderBody">
@@ -98,12 +98,12 @@
                                 <h3>
                                 Info zu Heute
                                 </h3> 
-                                <p>Der <span class="datumLang">25.7.2022</span>  ist ein <span id="Wochentag">Maustag</span> und zwar der <span id="xteWoche">4.</span>  <span id="Wochentag">Montag</span> des Monats <span id="Monatsname">Julei</span>
-                                im jahr <span id="JahrInfo">2020</span> .<br>
-                                Es handelt sich nicht um einen gesetzlichen Feiertag.<br> Der Letze Feiertag 
-                                vor dem <span class="datumLang">25.7.2022</span>  war der 16.6.2022(Fronleichnam)<br> und der nächste Feiertag 
-                                ist der 03.10.22(Tag der Deutschen Einheit)
-                                </p>
+                                <p>Der <span class="datumLang">25.7.2022</span>  ist ein <span class="weekTag">Maustag</span> und zwar der <span id="xteWoche">4.</span>  <span class="weekTag">Montag</span> des Monats <span id="Monatsname">Julei</span>
+                                im Jahr <span id="JahrInfo">2020</span> .<br>
+                                Es handelt sich  um <span id="Feiertag"><!--einen--></span> Gesetzlichen Feiertag.<br> Der Letze Feiertag 
+                                vor dem <span class="datumLang">25.7.2022</span>  war der <span id="lastHolyday"> 
+                                16.6.2022(Fronleichnam)</span><br> und der nächste Feiertag 
+                                <span id="nextHolyday">ist der 03.10.22(Tag der Deutschen Einheit)</span> </p>
                         </div>
                             <div id="history"> <!--Historische Fakten-->
                                 <h4><ins>Historische Ereignisse am <span id="datumKurz">25.07</span></ins>.</h4>
