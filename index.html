@@ -1,21 +1,17 @@
 <HTML>
     <head>
         <link rel="stylesheet" href="stylesheet.css">
-        <!-- HTML coment -->
-        <!-- /*CSS coment*/ -->
-  
-            <Title>
-            Mein Kalender
-            </Title>      
+        <Title>Mein Kalender</Title>      
+        <script type="text/javascript" src="script.js" defer></script>
     </head>
     <Body>
         <h1 id="H1">
-            Mein Kalender  <span id="datum01">25.07.2022</span> 
+            Mein Kalender  <span class="datumLang">25.07.2022</span> 
         </h1>
             <div id="gridcontainer"> <!--grid.container-->  
                 <div id="header"> <!--Header-->
                         
-                        <h2> Kalenderblatt <span id="datum02">25.7.2022</span></h2>
+                        <h2> Kalenderblatt <span class="datumLang">25.7.2022</span></h2>
                 </div>                                
                     <div id="kalender"> <!--Kalenderblatt-->
                         <table >
@@ -30,8 +26,8 @@
                                     <th><button id="forward_y"> + </button></th>
                                 </tr>
                             </thead>
-                                <tbody>
-                                    <tr>
+                                <tbody id = "kalenderBody">
+                                    <!-- <tr>
                                         <th class="kopfzeile">KW</th>
                                         <th class="kopfzeile">Mon</th>
                                         <th class="kopfzeile">Die</th>
@@ -40,9 +36,9 @@
                                         <th class="kopfzeile">Fre</th>
                                         <th class="Samstag">Sam</th>
                                         <th class="Sonntag">Son</th>
-                                    </tr>
-                                    <tr>
-                                        <th> 26</th>
+                                    </tr> -->
+                                   <!-- <tr>
+                                        <td>26</td>
                                         <td>27</td>
                                         <td>28</td>
                                         <td>29</td>
@@ -91,8 +87,9 @@
                                         <td class="Samstag">30</td>
                                         <td class="Sonntag">31</td>
                                     </tr>
+                                </tbody>-->
                                 </tbody>
-                        </table>
+                            </table>
                     </div>
                    <div id="links"><!--Foto link-->
                         <img src="tour-de-france.jpg" alt="Bild der tour de france">
@@ -134,5 +131,5 @@
             </div>    
             <p id="test"></p> 
     </Body>
-    <script type="text/javascript" src="script.js"></script>
+    
 </HTML>  
