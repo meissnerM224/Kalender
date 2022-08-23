@@ -172,7 +172,7 @@ function buildCalender(){
         }
         document.getElementById('calenderBody').innerHTML =tablehtml;
     }  
-    /*''Kalenderwoche ausrechnen''  um die Kalenderwoche zuermitterln müssen wir den 1.1.xxxx definieren und mit einer schleife abfragen bis wir den ersten Montag im Jahre gefunden haben.das entspricht dann KW1. 
+    /*'Kalenderwoche ausrechnen'um die Kalenderwoche zuermitterln müssen wir den 1.1.xxxx definieren und mit einer schleife abfragen bis wir den ersten Montag im Jahre gefunden haben.das entspricht dann KW1. 
     In einer weiteren berechnung ermitterln wir den wert von Kw1 bis heute und rechnen diesen von millisekunden runter bis auf Tage oder Wochen (1000/60/60/24/7)
     Dann müssen wir das Zeitformat auf UTC stellen, wegen der Zeitumstellung in der GMT Zetiform.*/
     
