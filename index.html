@@ -6,36 +6,35 @@
     </head>
     <Body>
         <h1 id="H1">
-            Mein Kalender  <span class="datumLang">25.07.2022</span> 
+            Mein Kalender  <span class="dateLong">25.07.2022</span> 
         </h1>
             <div id="gridcontainer"> <!--grid.container-->  
                 <div id="header"> <!--Header-->
                         
-                        <h2> Kalenderblatt <span class="datumLang">25.7.2022</span></h2>
+                        <h2> Kalenderblatt <span class="dateLong">25.7.2022</span></h2>
                 </div>                                
-                    <div id="kalender"> <!--Kalenderblatt-->
+                    <div id="Calender"> <!--Kalenderblatt-->
                         <table >
                             <thead>
                                 <tr>
                                     <th><button type="button" id="back_m" onclick=""> - </button></th>
-                                    <th id="Monat">Juli</th>
+                                    <th id="Month"  >Juli</th>
                                     <th><button type="button" id="forward_m" onclick=""> + </button></th>
-                                    <th id="none"></th>
                                     <th><button type="button" id="back_y" onclick=""> - </button></th>
-                                    <th id="Jahr">2022</th>
+                                    <th id="year">2022</th>
                                     <th><button type="button" id="forward_y" onclick=""> + </button></th>
                                 </tr>
                             </thead>
-                                <tbody id = "kalenderBody">
+                                <tbody id = "calenderBody">
                                     <!-- <tr>
-                                        <th class="kopfzeile">KW</th>
-                                        <th class="kopfzeile">Mon</th>
-                                        <th class="kopfzeile">Die</th>
-                                        <th class="kopfzeile">Mit</th>
-                                        <th class="kopfzeile">Don</th>
-                                        <th class="kopfzeile">Fre</th>
-                                        <th class="Samstag">Sam</th>
-                                        <th class="Sonntag">Son</th>
+                                        <th class="headTable">KW</th>
+                                        <th class="headTable">Mon</th>
+                                        <th class="headTable">Die</th>
+                                        <th class="headTable">Mit</th>
+                                        <th class="headTable">Don</th>
+                                        <th class="headTable">Fre</th>
+                                        <th class="Saturday">Sam</th>
+                                        <th class="Sunday">Son</th>
                                     </tr> -->
                                    <!-- <tr>
                                         <td>26</td>
@@ -44,8 +43,8 @@
                                         <td>29</td>
                                         <td>30</td>
                                         <td>1</td>
-                                        <td class="Samstag">2</td>
-                                        <td class="Sonntag">3</td>
+                                        <td class="Saturday">2</td>
+                                        <td class="Sunday">3</td>
                                     </tr>
                                     <tr>
                                         <th>27</th>
@@ -54,8 +53,8 @@
                                         <td>6</td>
                                         <td>7</td>
                                         <td>8</td>
-                                        <td class="Samstag">9</td>
-                                        <td class="Sonntag">10</td>
+                                        <td class="Saturday">9</td>
+                                        <td class="Sunday">10</td>
                                     </tr>                    
                                     <tr>
                                         <th>28</th>
@@ -64,8 +63,8 @@
                                         <td>13</td>
                                         <td>14</td>
                                         <td>15</td>
-                                        <td class="Samstag">16</td>
-                                        <td class="Sonntag">17</td>
+                                        <td class="Saturday">16</td>
+                                        <td class="Sunday">17</td>
                                     </tr>                   
                                     <tr>
                                         <th>29</th>
@@ -74,8 +73,8 @@
                                         <td>20</td>
                                         <td>21</td>
                                         <td>22</td>
-                                        <td class="Samstag">23</td>
-                                        <td class="Sonntag">24</td>
+                                        <td class="Saturday">23</td>
+                                        <td class="Sunday">24</td>
                                     </tr>
                                     <tr>
                                         <th>30</th>
@@ -84,29 +83,29 @@
                                         <td>27</td>
                                         <td>28</td>
                                         <td>29</td>
-                                        <td class="Samstag">30</td>
-                                        <td class="Sonntag">31</td>
+                                        <td class="Saturday">30</td>
+                                        <td class="Sunday">31</td>
                                     </tr>
                                 </tbody>-->
                                 </tbody>
                             </table>
                     </div>
                    <div id="links"><!--Foto link-->
-                        <img src="tour-de-france.jpg" alt="Bild der tour de france">
+                        <!--<img src="tour-de-france.jpg" alt="Bild der tour de france">-->
                     </div>
                         <div id="info"> <!--Infotext-->
                                 <h3>
                                 Info zu Heute
                                 </h3> 
-                                <p>Der <span class="datumLang">25.7.2022</span>  ist ein <span class="weekTag">Maustag</span> und zwar der <span id="xteWoche">4.</span>  <span class="weekTag">Montag</span> des Monats <span id="Monatsname">Julei</span>
-                                im Jahr <span id="JahrInfo">2020</span> .<br>
-                                Es handelt sich  um <span id="Feiertag"><!--einen--></span> Gesetzlichen Feiertag.<br> Der Letze Feiertag 
-                                vor dem <span class="datumLang">25.7.2022</span>  war der <span id="lastHolyday"> 
+                                <p>Der <span class="dateLong">25.7.2022</span>  ist ein <span class="WeekDAys">Maustag</span> und zwar der <span id="xteWeek">4.</span>  <span class="WeekDAys">Montag</span> des Monats <span id="MonthName">Julei</span>
+                                im Jahr <span id="yearInfo">2020</span> .<br>
+                                Es handelt sich  um <span id="freeDay"><!--einen Gesetzlichen Feiertag--></span> .<br> Der Letze Feiertag 
+                                vor dem <span class="dateLong">25.7.2022</span>  war der <span id="lastHolyday"> 
                                 16.6.2022(Fronleichnam)</span><br> und der nächste Feiertag 
                                 <span id="nextHolyday">ist der 03.10.22(Tag der Deutschen Einheit)</span> </p>
                         </div>
                             <div id="history"> <!--Historische Fakten-->
-                                <h4><ins>Historische Ereignisse am <span id="datumKurz">25.07</span></ins>.</h4>
+                                <h3><ins>Historische Ereignisse am <span id="datumKurz">25.07</span></ins>.</h3>
                             
                                 <ul>
                                     <li>Der 25. Juli ist der 206. Tag des gregorianischen Kalenders (der 207. in Schaltjahren), somit bleiben 159 Tage bis zum Jahresende.

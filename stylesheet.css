@@ -39,7 +39,7 @@
         grid-row-start:1 ;
         grid-row-end:1 ;*/
     }
-    #kalender {
+    #Calender {
         grid-area:Kalender;
         display: flex;
         justify-content: center;
@@ -103,36 +103,36 @@
     #H1{
     text-align: center;
     }
-    #Monat {
+    #Month {
     color:maroon;
     text-align: left;
     border: none;
     
     }
-    #Jahr{
+    #year{
     color: maroon;
     border: none;
     align-items: stretch; 
     width: 50px;
     }
-    .Samstag{
+    .Saturday{
         background-color:#d8a766;
         padding: 0 5px 0 5px;    
         width: 50px;
     }
-    td~.Samstag:hover{
+    td~.Saturday:hover{
         background-color:#eb433794;
     }  
-    .Sonntag{
+    .Sunday{
         background-color:#cf3d33;
         color: #ffc880;
         padding: 0 5px 0 5px;
         width: 50px;
     }  
-    td~.Sonntag:hover{
+    td~.Sunday:hover{
         background-color: #9f60bf;
     }
-    .kopfzeile{
+    .headTable{
         background-color: black;
         color: aliceblue;
         padding: 5px;    
@@ -171,9 +171,16 @@
         display: block;
         width: 50px;
     }
-    .heute{
+    .todayCl{
         background-color: #8fd81b;
+        border: 3px solid;
     }
-    .feiertag{
+    .restDay{
         background-color: pink;
+    }
+    .selected{
+        background-color: #92b0d9;
+    }
+    .otherMonth{
+        opacity: 50%;
     }
