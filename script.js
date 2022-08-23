@@ -186,17 +186,13 @@ function setDate(newDate){
         setDate
         (new Date(selectedDate.getFullYear(),
             (selectedDate.getMonth()-1),selectedDate.getDate())
-        );
+        )
     }     
     document.getElementById('forward_m').onclick = function(){
         setDate
         (new Date(selectedDate.getFullYear(),
            (selectedDate.getMonth()+1),selectedDate.getDate())
         )
-    }
-    function setFullYear(){
-        selectedDate = newDate;
-        buildCalender();
     }
     document.getElementById('back_y').onclick = function(){
         setDate
@@ -263,4 +259,7 @@ historyTextHTML +='<li></li>'
 historyTextHTML +='<li></li>'
 historyTextHTML +='<li></li>'
 historyTextHTML +='</ul>'
+}
+function buildInfoText(){
+
 }
