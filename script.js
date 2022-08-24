@@ -5,102 +5,7 @@ let selectedDate = today;
 buildCalender();
  
 function buildCalender(){
-    let dayToday = selectedDate.getDate();
-    let MonthToday = selectedDate.getMonth() + 1;
-    let yearToday = selectedDate.getFullYear();
-    let todayString = dayToday + '.' + MonthToday + '.'+ yearToday;
- // definition of Weekday name in a Array.
-    let weekDayInputt = selectedDate.getDay(); 
-    let weekD = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
-    let weekDayOutput = weekD[weekDayInputt];
-    if(weekDayInputt == today) {
-        weekDayOutput = weekD[weekDayInputt];
-    }
- // Output weekday for Infotext
-    let listOFAllWeekDAys= document.body.getElementsByClassName('WeekDAys');
-    for(let i = 0; i < listOFAllWeekDAys.length; i++)
-    {  listOFAllWeekDAys[i].innerHTML = weekDayOutput;}
- // definition the Monthname in Array
-    let getMonthNumber = selectedDate.getMonth();
-    let monthNameArray = ['Januar','Februar','März','April','Mai','Juni','Juli',
-    'August','September','Oktober','November','Dezember'];
-    let monthNameOutput = monthNameArray[getMonthNumber];
-    if(getMonthNumber == today){
-        monthNameOutput = monthNameArray[getMonthNumber];
-    }
- //definition the number of weekday
-    let HowManyWeekItIs = selectedDate.getDate()
-    if(HowManyWeekItIs <= 7) {
-        HowManyWeekItIs = '1.'
-    }  else if(HowManyWeekItIs <= 14){ 
-        HowManyWeekItIs = '2.'
-    }  else if(HowManyWeekItIs <= 21){    
-        HowManyWeekItIs = '3.'
-    }   else if(HowManyWeekItIs <= 28){
-        HowManyWeekItIs = '4.'
-    } else if(HowManyWeekItIs > 28) {
-        HowManyWeekItIs = '5.'
-    }
-    document.getElementById('xteWeek').innerHTML = HowManyWeekItIs;
-    let germanYear = selectedDate.getFullYear();
-    document.getElementById('MonthName').innerHTML = monthNameOutput;
-    document.getElementById("yearInfo").innerHTML = germanYear;
-    document.getElementById('Month').innerHTML = monthNameOutput;
-    document.getElementById('year').innerHTML = germanYear;
-    // the next holyday?
-    let nextHolyDayInGerman 
-    if (selectedDate < new Date(selectedDate.getFullYear(),0,06)) {
-        nextHolyDayInGerman = ' Heilige Drei Könige am 6.1. ';
-    }
-    else if (selectedDate < new Date(selectedDate.getFullYear(),4,01))  {
-        nextHolyDayInGerman = ' ist der Tag der Arbeit am 1.5. ';
-    }
-    else if (selectedDate < new Date(selectedDate.getFullYear(),9,03))  {
-        nextHolyDayInGerman = ' ist der Tag d. Deutschen Einheit am3.10 ';
-    }
-    else if (selectedDate < new Date(selectedDate.getFullYear(),11,24)) {
-        nextHolyDayInGerman = ' ist Heiligabend am 24.12 ';
-    }
-    else if (selectedDate < new Date(selectedDate.getFullYear(),11,25))  {
-        nextHolyDayInGerman = ' ist der 1.Weihnachtsfeiertag am 25.12 ';
-    }
-    else if (selectedDate < new Date(selectedDate.getFullYear(),11,26))  {
-        nextHolyDayInGerman = ' ist der 2.Weihnachtsfeiertag am 26.12. ';
-    }
-    else if(selectedDate< new Date(selectedDate.getFullYear(),11,31))  {
-        nextHolyDayInGerman = '  Neujahr am 1.1. ';
-    }
-    document.getElementById('nextHolyday').innerHTML = nextHolyDayInGerman;
-    // the last holyday?
-    let lastHolydayInGerman; 
-    if(selectedDate > new Date(selectedDate.getFullYear(),11,26))  {
-        lastHolydayInGerman = '2 .Weihnachtsfeiertag am 26.12. ';
-    }
-    else if (selectedDate > new Date(selectedDate.getFullYear(),11,25))  {
-        lastHolydayInGerman = '1.Weihnachtsfeiertag am 25.12. ';
-    }
-    else if (selectedDate > new Date(selectedDate.getFullYear(),11,24)) {
-        lastHolydayInGerman = ' Heiligabend am 24.12 ';
-    }
-    else if (selectedDate > new Date(selectedDate.getFullYear(),9,03))  {
-        lastHolydayInGerman = 'Tag  Deutschen Einheit am 3.10.';
-    }
-    else if (selectedDate > new Date(selectedDate.getFullYear(),4,01))  {
-        lastHolydayInGerman = 'Tag der Arbeit am 1.5.';
-    }
-    else if (selectedDate > new Date(selectedDate.getFullYear(),00,06))  {
-        lastHolydayInGerman = 'Heilige drei Könige am 6.1.';
-    }
-    else if (selectedDate > new Date(selectedDate.getFullYear(),0,01))  {
-        lastHolydayInGerman = 'Neujahr am 1.1. ';
-    }else if(selectedDate = new Date(selectedDate.getFullYear(),00,01)){
-        lastHolydayInGerman = '2. Weihnachtsfeiertag am 26.12. '
-    }
-    document.getElementById('lastHolyday').innerHTML =lastHolydayInGerman;
-    // Date in the Calender
-        let listOfDateLong =  document.body.getElementsByClassName('dateLong');
-        for(let i = 0; i < listOfDateLong.length; i++)
-    {  listOfDateLong[i].innerHTML = todayString;}
+    buildInfoText();
     //Draw Calender
     let firstOfMonth = new Date(selectedDate.getFullYear(),selectedDate.getMonth(),1);
     let firstWeekDayMonth = firstOfMonth.getDay(); 
@@ -164,9 +69,7 @@ function buildCalender(){
         if(isHoliday(cellDate)){ 
             cellClass += ' restDay';
         }//create the cell in the table
-        tablehtml = tablehtml + '<td class="' + cellClass + '" onclick="setDate(new Date('+cellDate.getFullYear()+','+cellDate.getMonth()+','+cellDate.getDate()+'))">' + cellDate.getDate() + '</td>';
-        // console.log(cellDate);
-        
+        tablehtml = tablehtml + '<td class="' + cellClass + '" onclick="setDate(new Date('+cellDate.getFullYear()+','+cellDate.getMonth()+','+cellDate.getDate()+'))">' + cellDate.getDate() + '</td>';    
         if(cellDate.getDay() == 0) {
             tablehtml += '</tr>';
         }
@@ -261,5 +164,100 @@ historyTextHTML +='<li></li>'
 historyTextHTML +='</ul>'
 }
 function buildInfoText(){
-
+    let dayToday = selectedDate.getDate();
+    let MonthToday = selectedDate.getMonth() + 1;
+    let yearToday = selectedDate.getFullYear();
+    let todayString = dayToday + '.' + MonthToday + '.'+ yearToday;
+ // definition of Weekday name in a Array.
+    let weekDayInputt = selectedDate.getDay(); 
+    let weekD = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+    let weekDayOutput = weekD[weekDayInputt];
+    if(weekDayInputt == today) {
+        weekDayOutput = weekD[weekDayInputt];
+    }
+   // Output weekday for Infotext
+    let listOFAllWeekDAys= document.body.getElementsByClassName('WeekDAys');
+    for(let i = 0; i < listOFAllWeekDAys.length; i++)
+    {  listOFAllWeekDAys[i].innerHTML = weekDayOutput;}
+ // definition the Monthname in Array
+    let getMonthNumber = selectedDate.getMonth();
+    let monthNameArray = ['Januar','Februar','März','April','Mai','Juni','Juli',
+    'August','September','Oktober','November','Dezember'];
+    let monthNameOutput = monthNameArray[getMonthNumber];
+    if(getMonthNumber == today){
+        monthNameOutput = monthNameArray[getMonthNumber];
+    }
+ //definition the number of weekday
+    let HowManyWeekItIs = selectedDate.getDate()
+    if(HowManyWeekItIs <= 7) {
+        HowManyWeekItIs = '1.'
+    }  else if(HowManyWeekItIs <= 14){ 
+        HowManyWeekItIs = '2.'
+    }  else if(HowManyWeekItIs <= 21){    
+        HowManyWeekItIs = '3.'
+    }   else if(HowManyWeekItIs <= 28){
+        HowManyWeekItIs = '4.'
+    } else if(HowManyWeekItIs > 28) {
+        HowManyWeekItIs = '5.'
+    }
+    document.getElementById('xteWeek').innerHTML = HowManyWeekItIs;
+    let germanYear = selectedDate.getFullYear();
+    document.getElementById('MonthName').innerHTML = monthNameOutput;
+    document.getElementById("yearInfo").innerHTML = germanYear;
+    document.getElementById('Month').innerHTML = monthNameOutput;
+    document.getElementById('year').innerHTML = germanYear;
+    // the next holyday?
+    let nextHolyDayInGerman 
+    if (selectedDate < new Date(selectedDate.getFullYear(),0,06)) {
+        nextHolyDayInGerman = ' Heilige Drei Könige am 6.1. ';
+    }
+    else if (selectedDate < new Date(selectedDate.getFullYear(),4,01))  {
+        nextHolyDayInGerman = ' ist der Tag der Arbeit am 1.5. ';
+    }
+    else if (selectedDate < new Date(selectedDate.getFullYear(),9,03))  {
+        nextHolyDayInGerman = ' ist der Tag d. Deutschen Einheit am3.10 ';
+    }
+    else if (selectedDate < new Date(selectedDate.getFullYear(),11,24)) {
+        nextHolyDayInGerman = ' ist Heiligabend am 24.12 ';
+    }
+    else if (selectedDate < new Date(selectedDate.getFullYear(),11,25))  {
+        nextHolyDayInGerman = ' ist der 1.Weihnachtsfeiertag am 25.12 ';
+    }
+    else if (selectedDate < new Date(selectedDate.getFullYear(),11,26))  {
+        nextHolyDayInGerman = ' ist der 2.Weihnachtsfeiertag am 26.12. ';
+    }
+    else if(selectedDate<= new Date(selectedDate.getFullYear(),11,31))  {
+        nextHolyDayInGerman = '  Neujahr am 1.1. ';
+    }
+    document.getElementById('nextHolyday').innerHTML = nextHolyDayInGerman;
+    // the last holyday?
+    let lastHolydayInGerman; 
+    if(selectedDate > new Date(selectedDate.getFullYear(),11,26))  {
+        lastHolydayInGerman = '2 .Weihnachtsfeiertag am 26.12. ';
+    }
+    else if (selectedDate > new Date(selectedDate.getFullYear(),11,25))  {
+        lastHolydayInGerman = '1.Weihnachtsfeiertag am 25.12. ';
+    }
+    else if (selectedDate > new Date(selectedDate.getFullYear(),11,24)) {
+        lastHolydayInGerman = ' Heiligabend am 24.12 ';
+    }
+    else if (selectedDate > new Date(selectedDate.getFullYear(),9,03))  {
+        lastHolydayInGerman = 'Tag  Deutschen Einheit am 3.10.';
+    }
+    else if (selectedDate > new Date(selectedDate.getFullYear(),4,01))  {
+        lastHolydayInGerman = 'Tag der Arbeit am 1.5.';
+    }
+    else if (selectedDate > new Date(selectedDate.getFullYear(),00,06))  {
+        lastHolydayInGerman = 'Heilige drei Könige am 6.1.';
+    }
+    else if (selectedDate > new Date(selectedDate.getFullYear(),0,01))  {
+        lastHolydayInGerman = 'Neujahr am 1.1. ';
+    }else if(selectedDate = new Date(selectedDate.getFullYear(),00,01)){
+        lastHolydayInGerman = '2. Weihnachtsfeiertag am 26.12. '
+    }
+    document.getElementById('lastHolyday').innerHTML =lastHolydayInGerman;
+    // Date in the Calender
+        let listOfDateLong =  document.body.getElementsByClassName('dateLong');
+        for(let i = 0; i < listOfDateLong.length; i++)
+    {  listOfDateLong[i].innerHTML = todayString;}
 }
