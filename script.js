@@ -5,25 +5,22 @@ let selectedDate = today;
 buildCalender();
  
 function buildCalender(){
-    buildInfoText();
     //Draw Calender
     let firstOfMonth = new Date(selectedDate.getFullYear(),selectedDate.getMonth(),1);
     let firstWeekDayMonth = firstOfMonth.getDay(); 
     let lastOfMonth = new Date(firstOfMonth.getFullYear(),firstOfMonth.getMonth()+1,0);
     let lastWeekdayMonth = lastOfMonth.getDay();
     let howManydaysMonth = lastOfMonth.getDate();
-    let daysToDrawBefore; 
     if(firstWeekDayMonth == 0){ // 0 is Sunday
-            daysToDrawBefore = 6; // for the Sunday 6 days to draw
-        } else {
-            daysToDrawBefore = firstWeekDayMonth -1; // else days to draw before Monday
-        }
-        if (lastWeekdayMonth == 0){ //0 is Sunday
-            dayToDrawAfter = 0;  // for Sunday no Days to draw
-        } else {
-            dayToDrawAfter = 7- lastWeekdayMonth // else days to draw to Sunday
-        }
-
+        daysToDrawBefore = 6; // for the Sunday 6 days to draw
+    } else {
+        daysToDrawBefore = firstWeekDayMonth -1; // else days to draw before Monday
+    }
+    if (lastWeekdayMonth == 0){ //0 is Sunday
+        dayToDrawAfter = 0;  // for Sunday no Days to draw
+    } else {
+        dayToDrawAfter = 7- lastWeekdayMonth // else days to draw to Sunday
+    }
     let daysToDraw = daysToDrawBefore + howManydaysMonth + dayToDrawAfter;
     let firstDayOfCalendar = new Date(firstOfMonth.getFullYear(), firstOfMonth.getMonth(),1 - daysToDrawBefore);
     let tablehtml= '';
@@ -41,7 +38,7 @@ function buildCalender(){
         let cellDate = new Date(firstDayOfCalendar.getFullYear(), firstDayOfCalendar.getMonth(), firstDayOfCalendar.getDate() + i);
         if(cellDate.getDay() == 1) {
             tablehtml = tablehtml + '<tr>';
-            tablehtml += '<td>' + getCalendarWeek(cellDate) + '</td>';
+            tablehtml = tablehtml + '<td class="kW">' + getCalendarWeek(cellDate) + '</td>';
         }
         let cellClass ='';
         if (cellDate.getDay() == 6) { 
@@ -78,8 +75,8 @@ function buildCalender(){
     /*'Kalenderwoche ausrechnen'um die Kalenderwoche zuermitterln müssen wir den 1.1.xxxx definieren und mit einer schleife abfragen bis wir den ersten Montag im Jahre gefunden haben.das entspricht dann KW1. 
     In einer weiteren berechnung ermitterln wir den wert von Kw1 bis heute und rechnen diesen von millisekunden runter bis auf Tage oder Wochen (1000/60/60/24/7)
     Dann müssen wir das Zeitformat auf UTC stellen, wegen der Zeitumstellung in der GMT Zetiform.*/
-    
-    //Feiertag bestimmt und in einer funktion verglichen ob das aktuelle datum mit dem Feiertag übereinstimmt
+       //Feiertag bestimmt und in einer funktion verglichen ob das aktuelle datum mit dem Feiertag übereinstimmt
+    buildInfoText();
 }
 function setDate(newDate){
     selectedDate = newDate;
@@ -109,7 +106,7 @@ function setDate(newDate){
         )
     }  
 function getCalendarWeek(date) {
-    let differenceTo = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), 12));
+    let differenceTo = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), 12));//today
     let theFirstJanuar =  new Date(Date.UTC(date.getFullYear(),00,01,12));// Set the 1.january
     let firstMonday = theFirstJanuar; 
     while( firstMonday.getDay() != 1) { //Runs until the first Monday is reached
@@ -153,30 +150,18 @@ function isHoliday(cellDate){
     }   else (freeDay = ' kein Gesetzlicher Feiertag')
     document.getElementById('freeDay').innerHTML = freeDay;
 }
-function biuldHistoryText(){
-let historyTextHTML='';
-historyTextHTML +='<ul>'
-historyTextHTML +='<li></li> '
-historyTextHTML +='<li></li>'
-historyTextHTML +='<li></li>'
-historyTextHTML +='<li></li>'
-historyTextHTML +='<li></li>'
-historyTextHTML +='</ul>'
-}
 function buildInfoText(){
     let dayToday = selectedDate.getDate();
     let MonthToday = selectedDate.getMonth() + 1;
     let yearToday = selectedDate.getFullYear();
     let todayString = dayToday + '.' + MonthToday + '.'+ yearToday;
- // definition of Weekday name in a Array.
-    let weekDayInputt = selectedDate.getDay(); 
+    let weekDayInputt = selectedDate.getDay();  // definition of Weekday name in a Array.
     let weekD = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
     let weekDayOutput = weekD[weekDayInputt];
-    if(weekDayInputt == today) {
+    if(weekDayInputt == selectedDate) {
         weekDayOutput = weekD[weekDayInputt];
     }
-   // Output weekday for Infotext
-    let listOFAllWeekDAys= document.body.getElementsByClassName('WeekDAys');
+    let listOFAllWeekDAys= document.body.getElementsByClassName('WeekDAys');// Output weekday for Infotext
     for(let i = 0; i < listOFAllWeekDAys.length; i++)
     {  listOFAllWeekDAys[i].innerHTML = weekDayOutput;}
  // definition the Monthname in Array
@@ -190,15 +175,15 @@ function buildInfoText(){
  //definition the number of weekday
     let HowManyWeekItIs = selectedDate.getDate()
     if(HowManyWeekItIs <= 7) {
-        HowManyWeekItIs = '1.'
+        HowManyWeekItIs = '1.';
     }  else if(HowManyWeekItIs <= 14){ 
-        HowManyWeekItIs = '2.'
+        HowManyWeekItIs = '2.';
     }  else if(HowManyWeekItIs <= 21){    
-        HowManyWeekItIs = '3.'
+        HowManyWeekItIs = '3.';
     }   else if(HowManyWeekItIs <= 28){
-        HowManyWeekItIs = '4.'
+        HowManyWeekItIs = '4.';
     } else if(HowManyWeekItIs > 28) {
-        HowManyWeekItIs = '5.'
+        HowManyWeekItIs = '5.';
     }
     document.getElementById('xteWeek').innerHTML = HowManyWeekItIs;
     let germanYear = selectedDate.getFullYear();
@@ -207,7 +192,7 @@ function buildInfoText(){
     document.getElementById('Month').innerHTML = monthNameOutput;
     document.getElementById('year').innerHTML = germanYear;
     // the next holyday?
-    let nextHolyDayInGerman 
+    let nextHolyDayInGerman; 
     if (selectedDate < new Date(selectedDate.getFullYear(),0,06)) {
         nextHolyDayInGerman = ' Heilige Drei Könige am 6.1. ';
     }
@@ -215,7 +200,7 @@ function buildInfoText(){
         nextHolyDayInGerman = ' ist der Tag der Arbeit am 1.5. ';
     }
     else if (selectedDate < new Date(selectedDate.getFullYear(),9,03))  {
-        nextHolyDayInGerman = ' ist der Tag d. Deutschen Einheit am3.10 ';
+        nextHolyDayInGerman = ' ist der Tag d. Deutschen Einheit am 3.10 ';
     }
     else if (selectedDate < new Date(selectedDate.getFullYear(),11,24)) {
         nextHolyDayInGerman = ' ist Heiligabend am 24.12 ';
