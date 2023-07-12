@@ -107,7 +107,7 @@ function setDate(newDate){
     }  
 function getCalendarWeek(date) {
     let differenceTo = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), 12));//today
-    let theFirstJanuar =  new Date(Date.UTC(date.getFullYear(),00,01,12));// Set the 1.january
+    let theFirstJanuar =  new Date(Date.UTC(date.getFullYear(),0,1,12));// Set the 1.january
     let firstMonday = theFirstJanuar; 
     while( firstMonday.getDay() != 1) { //Runs until the first Monday is reached
         firstMonday = new Date(Date.UTC(firstMonday.getFullYear(),firstMonday.getMonth(),firstMonday.getDate() + 1,12));
@@ -118,10 +118,10 @@ function getCalendarWeek(date) {
     return kwRounded;
 }
 function isHoliday(cellDate){
-    let newYear = new Date (2022,00,01);
-    let holyThreeKings = new Date(2022,00,06);
-    let dayOfWork = new Date(2022,04,01);
-    let dayOfGermanUnion = new Date(2022,09,03);
+    let newYear = new Date (2022, 0,1);
+    let holyThreeKings = new Date(2022,0,6);
+    let dayOfWork = new Date(2022,4,1);
+    let dayOfGermanUnion = new Date(2022,9,3);
     let firstChristmasday = new Date(2022,11,25);
     let secondChristmasday = new Date(2022,11,26);
     let holyDay = false;
@@ -193,13 +193,13 @@ function buildInfoText(){
     document.getElementById('year').innerHTML = germanYear;
     // the next holyday?
     let nextHolyDayInGerman; 
-    if (selectedDate < new Date(selectedDate.getFullYear(),0,06)) {
+    if (selectedDate < new Date(selectedDate.getFullYear(),0,6)) {
         nextHolyDayInGerman = ' Heilige Drei Könige am 6.1. ';
     }
-    else if (selectedDate < new Date(selectedDate.getFullYear(),4,01))  {
+    else if (selectedDate < new Date(selectedDate.getFullYear(),4,1))  {
         nextHolyDayInGerman = ' ist der Tag der Arbeit am 1.5. ';
     }
-    else if (selectedDate < new Date(selectedDate.getFullYear(),9,03))  {
+    else if (selectedDate < new Date(selectedDate.getFullYear(),9,3))  {
         nextHolyDayInGerman = ' ist der Tag d. Deutschen Einheit am 3.10 ';
     }
     else if (selectedDate < new Date(selectedDate.getFullYear(),11,24)) {
@@ -226,18 +226,18 @@ function buildInfoText(){
     else if (selectedDate > new Date(selectedDate.getFullYear(),11,24)) {
         lastHolydayInGerman = ' Heiligabend am 24.12 ';
     }
-    else if (selectedDate > new Date(selectedDate.getFullYear(),9,03))  {
+    else if (selectedDate > new Date(selectedDate.getFullYear(),9,3))  {
         lastHolydayInGerman = 'Tag  Deutschen Einheit am 3.10.';
     }
-    else if (selectedDate > new Date(selectedDate.getFullYear(),4,01))  {
+    else if (selectedDate > new Date(selectedDate.getFullYear(),4,1))  {
         lastHolydayInGerman = 'Tag der Arbeit am 1.5.';
     }
-    else if (selectedDate > new Date(selectedDate.getFullYear(),00,06))  {
+    else if (selectedDate > new Date(selectedDate.getFullYear(),0,6))  {
         lastHolydayInGerman = 'Heilige drei Könige am 6.1.';
     }
-    else if (selectedDate > new Date(selectedDate.getFullYear(),0,01))  {
+    else if (selectedDate > new Date(selectedDate.getFullYear(),0,1))  {
         lastHolydayInGerman = 'Neujahr am 1.1. ';
-    }else if(selectedDate = new Date(selectedDate.getFullYear(),00,01)){
+    }else if(selectedDate = new Date(selectedDate.getFullYear(),0,1)){
         lastHolydayInGerman = '2. Weihnachtsfeiertag am 26.12. '
     }
     document.getElementById('lastHolyday').innerHTML =lastHolydayInGerman;
