@@ -19,7 +19,7 @@ function buildCalender(){
     if (lastWeekdayMonth == 0){ //0 is Sunday
         dayToDrawAfter = 0;  // for Sunday no Days to draw
     } else {
-        dayToDrawAfter = 7- lastWeekdayMonth // else days to draw to Sunday
+        dayToDrawAfter = 7 - lastWeekdayMonth // else days to draw to Sunday
     }
     let daysToDraw = daysToDrawBefore + howManydaysMonth + dayToDrawAfter;
     let firstDayOfCalendar = new Date(firstOfMonth.getFullYear(), firstOfMonth.getMonth(),1 - daysToDrawBefore);
@@ -125,18 +125,18 @@ function isHoliday(cellDate){
     let firstChristmasday = new Date(2022,11,25);
     let secondChristmasday = new Date(2022,11,26);
     let holyDay = false;
-    if( cellDate.getMonth() == newYear.getMonth()         && cellDate.getDate() == newYear.getDate() ||
-        cellDate.getMonth() == holyThreeKings.getMonth()  && cellDate.getDate() == holyThreeKings.getDate() || 
-        cellDate.getMonth() ==  dayOfWork.getMonth()          && cellDate.getDate() ==dayOfWork.getDate() ||
-        cellDate.getMonth() ==  dayOfGermanUnion.getMonth()   && cellDate.getDate() == dayOfGermanUnion.getDate()||
-        cellDate.getMonth() ==  firstChristmasday.getMonth()  && cellDate.getDate() ==firstChristmasday.getDate()  ||
-        cellDate.getMonth() ==  secondChristmasday.getMonth() && cellDate.getDate() == secondChristmasday.getDate()){
+    if( cellDate.getMonth() == newYear.getMonth() && cellDate.getDate() == newYear.getDate() ||
+        cellDate.getMonth() == holyThreeKings.getMonth() && cellDate.getDate() == holyThreeKings.getDate() || 
+        cellDate.getMonth() == dayOfWork.getMonth() && cellDate.getDate() == dayOfWork.getDate() ||
+        cellDate.getMonth() == dayOfGermanUnion.getMonth() && cellDate.getDate() == dayOfGermanUnion.getDate() ||
+        cellDate.getMonth() == firstChristmasday.getMonth() && cellDate.getDate() ==firstChristmasday.getDate() ||
+        cellDate.getMonth() == secondChristmasday.getMonth() && cellDate.getDate() == secondChristmasday.getDate()){
         holyDay = true;
         return holyDay; 
     }
     let freeDay;
     if(selectedDate.getMonth() == newYear.getMonth() && selectedDate.getDate() ==newYear.getDate() ){
-        freeDay = ' Neujahrs Tag ';
+        freeDasy = ' Neujahrs Tag ';
     }   else if(selectedDate.getMonth() == holyThreeKings.getMonth() && selectedDate.getDate() == holyThreeKings.getDate()){
         freeDay = ' Heilige drei Könige Tag ';
     }   else if(selectedDate.getMonth() == dayOfWork.getMonth() && selectedDate.getDate() == dayOfWork.getDate()){
